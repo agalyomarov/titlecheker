@@ -1,0 +1,101 @@
+[03-Aug-2022 11:53:57 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\RequestException: cURL error 3:  (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://www.kirpich.ru  in /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:211
+Stack trace:
+#0 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(158): GuzzleHttp\Handler\CurlFactory::createRejection(Object(GuzzleHttp\Handler\EasyHandle), Array)
+#1 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(110): GuzzleHttp\Handler\CurlFactory::finishError(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#2 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php(47): GuzzleHttp\Handler\CurlFactory::finish(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#3 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(28): GuzzleHttp\Handler\CurlHandler->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#4 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(48): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#5 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php(35): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#6 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Middleware.php(31): GuzzleHttp\PrepareBodyMiddleware->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#7 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php(71): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#8 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Middleware.php(63): GuzzleHttp\RedirectMiddleware->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#9 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/HandlerStack.php(75): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#10 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Client.php(331): GuzzleHttp\HandlerStack->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#11 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Client.php(168): GuzzleHttp\Client->transfer(Object(GuzzleHttp\Psr7\Request), Array)
+#12 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Client.php(187): GuzzleHttp\Client->requestAsync('GET', Object(GuzzleHttp\Psr7\Uri), Array)
+#13 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/ClientTrait.php(44): GuzzleHttp\Client->request('GET', 'https://www.kir...', Array)
+#14 /Users/agaly/Desktop/title/checker.php(33): GuzzleHttp\Client->get('https://www.kir...')
+#15 {main}
+  thrown in /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php on line 211
+[03-Aug-2022 11:54:28 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `GET https://www.kirpich.ru/shop/kirpich/%20` resulted in a `404 Not Found` response:
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src (truncated...)
+ in /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113
+Stack trace:
+#0 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Middleware.php(69): GuzzleHttp\Exception\RequestException::create(Object(GuzzleHttp\Psr7\Request), Object(GuzzleHttp\Psr7\Response), NULL, Array, NULL)
+#1 /Users/agaly/Desktop/title/vendor/guzzlehttp/promises/src/Promise.php(204): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Response))
+#2 /Users/agaly/Desktop/title/vendor/guzzlehttp/promises/src/Promise.php(153): GuzzleHttp\Promise\Promise::callHandler(1, Object(GuzzleHttp\Psr7\Response), NULL)
+#3 /Users/agaly/Desktop/title/vendor/guzzlehttp/promises/src/TaskQueue.php(48): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{closure}()
+#4 /Users/agaly/Desktop/title/vendor/guzzlehttp/promises/src/Promise.php(248): GuzzleHttp\Promise\TaskQueue->run(true)
+#5 /Users/agaly/Desktop/title/vendor/guzzlehttp/promises/src/Promise.php(224): GuzzleHttp\Promise\Promise->invokeWaitFn()
+#6 /Users/agaly/Desktop/title/vendor/guzzlehttp/promises/src/Promise.php(269): GuzzleHttp\Promise\Promise->waitIfPending()
+#7 /Users/agaly/Desktop/title/vendor/guzzlehttp/promises/src/Promise.php(226): GuzzleHttp\Promise\Promise->invokeWaitList()
+#8 /Users/agaly/Desktop/title/vendor/guzzlehttp/promises/src/Promise.php(62): GuzzleHttp\Promise\Promise->waitIfPending()
+#9 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Client.php(187): GuzzleHttp\Promise\Promise->wait()
+#10 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/ClientTrait.php(44): GuzzleHttp\Client->request('GET', 'https://www.kir...', Array)
+#11 /Users/agaly/Desktop/title/checker.php(33): GuzzleHttp\Client->get('https://www.kir...')
+#12 {main}
+  thrown in /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php on line 113
+[03-Aug-2022 11:54:52 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\RequestException: cURL error 3:  (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://google.com  in /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:211
+Stack trace:
+#0 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(158): GuzzleHttp\Handler\CurlFactory::createRejection(Object(GuzzleHttp\Handler\EasyHandle), Array)
+#1 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(110): GuzzleHttp\Handler\CurlFactory::finishError(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#2 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php(47): GuzzleHttp\Handler\CurlFactory::finish(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#3 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(28): GuzzleHttp\Handler\CurlHandler->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#4 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(48): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#5 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php(35): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#6 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Middleware.php(31): GuzzleHttp\PrepareBodyMiddleware->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#7 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php(71): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#8 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Middleware.php(63): GuzzleHttp\RedirectMiddleware->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#9 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/HandlerStack.php(75): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#10 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Client.php(331): GuzzleHttp\HandlerStack->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#11 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Client.php(168): GuzzleHttp\Client->transfer(Object(GuzzleHttp\Psr7\Request), Array)
+#12 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Client.php(187): GuzzleHttp\Client->requestAsync('GET', Object(GuzzleHttp\Psr7\Uri), Array)
+#13 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/ClientTrait.php(44): GuzzleHttp\Client->request('GET', 'https://google....', Array)
+#14 /Users/agaly/Desktop/title/checker.php(33): GuzzleHttp\Client->get('https://google....')
+#15 {main}
+  thrown in /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php on line 211
+[03-Aug-2022 11:59:39 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\RequestException: cURL error 3:  (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://google.c  in /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:211
+Stack trace:
+#0 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(158): GuzzleHttp\Handler\CurlFactory::createRejection(Object(GuzzleHttp\Handler\EasyHandle), Array)
+#1 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(110): GuzzleHttp\Handler\CurlFactory::finishError(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#2 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php(47): GuzzleHttp\Handler\CurlFactory::finish(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#3 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(28): GuzzleHttp\Handler\CurlHandler->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#4 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(48): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#5 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php(35): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#6 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Middleware.php(31): GuzzleHttp\PrepareBodyMiddleware->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#7 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php(71): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#8 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Middleware.php(63): GuzzleHttp\RedirectMiddleware->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#9 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/HandlerStack.php(75): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#10 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Client.php(331): GuzzleHttp\HandlerStack->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#11 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Client.php(168): GuzzleHttp\Client->transfer(Object(GuzzleHttp\Psr7\Request), Array)
+#12 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Client.php(187): GuzzleHttp\Client->requestAsync('GET', Object(GuzzleHttp\Psr7\Uri), Array)
+#13 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/ClientTrait.php(44): GuzzleHttp\Client->request('GET', 'https://google....', Array)
+#14 /Users/agaly/Desktop/title/checker.php(33): GuzzleHttp\Client->get('https://google....')
+#15 {main}
+  thrown in /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php on line 211
+[03-Aug-2022 12:00:09 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\RequestException: cURL error 3:  (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://google.c  in /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:211
+Stack trace:
+#0 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(158): GuzzleHttp\Handler\CurlFactory::createRejection(Object(GuzzleHttp\Handler\EasyHandle), Array)
+#1 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(110): GuzzleHttp\Handler\CurlFactory::finishError(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#2 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php(47): GuzzleHttp\Handler\CurlFactory::finish(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#3 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(28): GuzzleHttp\Handler\CurlHandler->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#4 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(48): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#5 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php(35): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#6 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Middleware.php(31): GuzzleHttp\PrepareBodyMiddleware->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#7 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php(71): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#8 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Middleware.php(63): GuzzleHttp\RedirectMiddleware->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#9 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/HandlerStack.php(75): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#10 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Client.php(331): GuzzleHttp\HandlerStack->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#11 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Client.php(168): GuzzleHttp\Client->transfer(Object(GuzzleHttp\Psr7\Request), Array)
+#12 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Client.php(187): GuzzleHttp\Client->requestAsync('GET', Object(GuzzleHttp\Psr7\Uri), Array)
+#13 /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/ClientTrait.php(44): GuzzleHttp\Client->request('GET', 'https://google....', Array)
+#14 /Users/agaly/Desktop/title/checker.php(33): GuzzleHttp\Client->get('https://google....')
+#15 {main}
+  thrown in /Users/agaly/Desktop/title/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php on line 211
+[03-Aug-2022 12:00:15 UTC] PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo for google.c  failed: nodename nor servname provided, or not known in /Users/agaly/Desktop/title/checker.php on line 34
+[03-Aug-2022 12:00:15 UTC] PHP Warning:  file_get_contents(https://google.c ): Failed to open stream: php_network_getaddresses: getaddrinfo for google.c  failed: nodename nor servname provided, or not known in /Users/agaly/Desktop/title/checker.php on line 34
